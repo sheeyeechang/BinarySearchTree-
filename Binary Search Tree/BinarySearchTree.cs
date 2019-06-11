@@ -8,5 +8,23 @@ namespace Binary_Search_Tree
 {
     class BinarySearchTree
     {
+        //member varibale  
+        Node node;
+
+        //constructor
+        public BinarySearchTree()
+        {
+            node = new Node();
+        }
+        //method ----------------------------------------------------------------------------------------------------------
+        public void Add()
+        {
+
+        }
+
+        public void Search()
+        {
+
+        }
     }
 }
