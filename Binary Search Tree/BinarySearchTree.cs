@@ -12,46 +12,79 @@ namespace Binary_Search_Tree
         public Node node;
         Node rootNode = null;
 
+        public bool nodeInsert = false;
+
         //constructor
         public BinarySearchTree(int data)
         {
-            node = new Node(data);
+            rootNode = new Node(data);
+            node = rootNode;
+
         }
         //method (CAN DO)  ----------------------------------------------------------------------------------------------------------
         public void Add(int data)
         {
             Node newChildNode = new Node(data);
-            Node rootNode = new Node(data);
             if (rootNode == null)
             {
                 newChildNode = rootNode;
             }
-                                                    // while loop
-            if(newChildNode.data <= rootNode.data)
+            while (nodeInsert == false)                         // while loop
             {
-                node.left = newChildNode;
-            }
-            else if (node.left != null)
-            {
-                newChildNode = node.left;    //test
-            }
+                if (newChildNode.data == rootNode.data)               // fix the equal
+                {
+                    if (node.left == null)
+                    {
+                        node.left = newChildNode;
+                        newChildNode = node.left;       //reassign variable
+                        nodeInsert = true;
+                    }
+                    else if (node.left != null && newChildNode.data < node.left.data)
+                    {
+                        node = node.left;           // use node again
+                                                    //test
+                    }
+                    else if (node.left != null && newChildNode.data > node.left.data)
+                    {
+                        node = node.right;           // use node again
+                                                    //test
+                    }
+                }
+                else if (newChildNode.data < rootNode.data)               // fix the equal
+                {
+                    if (node.left == null)
+                    {
+                        node.left = newChildNode;
+                        newChildNode = node.left;       //reassign variable
+                        nodeInsert = true;
+                    }
+                    else if (node.left != null)
+                    {
+                        node = node.left;           // use node again
+                                                      //test
+                    }
+                }
+                else if (newChildNode.data > rootNode.data)
+                {
+                    if (node.right == null)
+                    {
+                        node.right = newChildNode;
+                        newChildNode = node.right;          // reassign variable
+                         nodeInsert = true;
+                    }
+                    else if (node.right != null)
+                    {
+                        node = node.right;          // // use node again
 
-
-            if (newChildNode.data > rootNode.data)
-            {
-                node.right = newChildNode;
+                    }
+                }
             }
-            else if (node.right != null)
-            {
+            nodeInsert = false;
 
-                newChildNode = node.right;
-            }
         }
 
         //The left sub-tree of a node has a key less than or equal to its parent node's key. 
         //The right sub-tree of a node has a key greater than to its parent node's key.
-
-
 
 
 
