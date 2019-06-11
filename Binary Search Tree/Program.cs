@@ -11,18 +11,18 @@ namespace Binary_Search_Tree
         static void Main(string[] args)
         {
 
-            BinarySearchTree tree = new BinarySearchTree();
-            //tree.Add(100);
-            //tree.Add(110);
-            //tree.Add(90);
-            //tree.Add(120);
-            //tree.Add(85);
-            //tree.Add(150);
-            //tree.Add(130);
-            //tree.Add(70);
-            //tree.Add(95);
-            //tree.Add(70);
-            //tree.Search(85);
+            BinarySearchTree tree = new BinarySearchTree(50);
+            tree.Add(55);
+            tree.Add(60);
+            tree.Add(50);
+            tree.Add(65);
+            tree.Add(85);
+            tree.Add(70);
+            tree.Add(80);
+            tree.Add(75);
+            tree.Add(90);
+            tree.Add(100);
+            //tree.Search(95);
 
         }
     }

@@ -8,22 +8,20 @@ namespace Binary_Search_Tree
 {
     class Node
     {
-        //member varibale  
+        //member varibale  (HAS A)
         public int data;
 
-        public Node linkedList;
-        public Node right;
         public Node left;
+        public Node right;
         //constructor
         public Node(int data)
         {
             this.data = data;
 
-            linkedList = null;
-            right = null;
             left = null;
+            right = null;
         }
 
-        //method ----------------------------------------------------------------------------------------------------------
+        //method (CAN DO)  ----------------------------------------------------------------------------------------------------------
     }
 }
