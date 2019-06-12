@@ -22,7 +22,13 @@ namespace Binary_Search_Tree
             tree.Add(75);
             tree.Add(90);
             tree.Add(100);
-            //tree.Search(95);
+
+            Node node = null;
+            //Console.WriteLine(tree.Search(90, node));
+            //Console.ReadLine();
+
+            Console.WriteLine(tree.Search(90, node));
+            Console.ReadLine();
 
         }
     }
