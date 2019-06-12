@@ -18,16 +18,13 @@ namespace Binary_Search_Tree
             tree.Add(65);
             tree.Add(85);
             tree.Add(70);
-            tree.Add(80);
+            tree.Add(35);
             tree.Add(75);
             tree.Add(90);
             tree.Add(100);
 
             Node node = null;
-            //Console.WriteLine(tree.Search(90, node));
-            //Console.ReadLine();
-
-            Console.WriteLine(tree.Search(90, node));
+            Console.WriteLine(tree.Search(10, node));
             Console.ReadLine();
 
         }

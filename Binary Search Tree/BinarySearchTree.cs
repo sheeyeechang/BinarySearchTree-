@@ -19,13 +19,13 @@ namespace Binary_Search_Tree
         //method (CAN DO)  ----------------------------------------------------------------------------------------------------------
         public void Add(int data)
         {
-            Node newChildNode = new Node(data);            //these varibale only in this method/scope
-            Node currentNode;
-            bool nodeInsert = false;
+            Node newChildNode = new Node(data);            //these varibale only in this method/scope  //create newChildNode object
+            Node currentNode;                              // create currentNode for temporary node
+            bool nodeInsert = false;                        //create insert node
 
             if (rootNode == null)                       // start with rootNode
             {
-                rootNode = newChildNode;
+                rootNode = newChildNode;                //reassgin rootNode to newChildNode
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Binary_Search_Tree
                             currentNode.left = newChildNode;            //insert node
                             nodeInsert = true;
                         }
-                        else if (rootNode.left != null)
+                        else if (currentNode.left != null)
                         {
                             currentNode = currentNode.left;
 
@@ -120,13 +120,32 @@ namespace Binary_Search_Tree
 
             if (data <= currentNode.data)
             {
-                return Search(data, currentNode.left);
+                
+                if (currentNode.left != null)
+                {
+                    return Search(data, currentNode.left);      // need this return Search to find the matching data
+                }
+                else if (currentNode.left == null)
+                {
+                    return false;
+
+                }
             }
             else
             {
-                return Search(data, currentNode.right);
+                if (currentNode.right != null)
+                {
+                    return Search(data, currentNode.right);      // need this return Search to find the matching data
+                }
+                else if (currentNode.right == null)
+                {
+                    return false;
+
+                }
             }
+            return false;
         }
+
 
         //node search(node, key)
         //{
